@@ -1,19 +1,19 @@
 var config = {
   entry: {
-    app: ['./src/core/bootstrap.js'],
+    app: ['./src/core/bootstrap.js']
   },
   output: {
     path:     __dirname + '/build/',
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   resolve: {
-    root: __dirname + '/src/',
+    root: __dirname + '/src/'
   },
   module: {
     noParse: [],
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'ng-annotate!babel' },
-      { test: /\.html$/, loader: 'raw' },
+      { test: /\.html$/, loader: 'raw' }
     ]
   }
 };
