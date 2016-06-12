@@ -27,7 +27,7 @@ function messagesRouting($stateProvider) {
             loadMessagesAllController: ($q, $ocLazyLoad) => {
                return $q((resolve) => {
                   require.ensure([], () => {
-                     let module = require('./controllers/messages.all.controller');
+                     let module = require('./controllers/messages.all.controller').default;
                      $ocLazyLoad.load({name: module.name});
                      resolve(module.controller);
                   })
@@ -48,7 +48,7 @@ function messagesRouting($stateProvider) {
                return $q((resolve) => {
                   require.ensure([], () => {
                      // load only controller module
-                     let module = require('./controllers/messages.new.controller');
+                     let module = require('./controllers/messages.new.controller').default;
                      $ocLazyLoad.load({name: module.name});
                      resolve(module.controller);
                   })
