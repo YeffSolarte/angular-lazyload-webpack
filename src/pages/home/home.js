@@ -1,7 +1,10 @@
 'use strict';
 
+import HomeController from './controllers/home.controller';
+import HomeAboutController from './controllers/home.about.controller';
+
 export default angular
    .module('home', [
-      require('./controllers/home.controller').name,
-      require('./controllers/home.about.controller').name
+      HomeController.name,
+      HomeAboutController.name
    ]);
