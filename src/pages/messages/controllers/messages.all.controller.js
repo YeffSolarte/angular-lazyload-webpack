@@ -1,5 +1,8 @@
 'use strict';
 
+import MsgStoreService from '../../../commons/msg-store/msg-store.service';
+
+
 class MessagesAllController {
   constructor(msgStore) {
     this.msgs = msgStore.all();
@@ -8,6 +11,6 @@ class MessagesAllController {
 
 export default angular
   .module('messages.all.controller', [
-    require('commons/msg-store').name,
+     MsgStoreService.name
   ])
   .controller('MessagesAllController', MessagesAllController);

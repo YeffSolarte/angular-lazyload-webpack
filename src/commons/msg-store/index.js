@@ -1,3 +1,5 @@
 'use strict';
 
-export default require('./msg-store.service');
+import MsgStoreService from './msg-store.service';
+
+export default MsgStoreService;
