@@ -26,4 +26,8 @@ export default angular
       require('./pages/messages/messages.routing').name*/
       homeRouting.name,
       messagesRouting.name
-   ]);
+   ]).config(['$ocLazyLoadProvider', function ($ocLazyLoadProvider) {
+      $ocLazyLoadProvider.config({
+         debug: true
+      });
+   }]);
