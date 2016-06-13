@@ -6,6 +6,22 @@ function homeRouting($urlRouterProvider, $stateProvider) {
    $stateProvider
       .state('home', {
          url: '/home',
+         template: '<home></home>',
+         resolve: {
+            loadHomeController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
+               return $q((resolve) => {
+                  require.ensure([], () => {
+                     // load whole module
+                     let module = require('./home').default;
+                     $ocLazyLoad.load({name: 'home'});
+                     resolve(module.controller);
+                  });
+               });
+            }]
+         }
+      })
+      /*.state('home', {
+         url: '/home',
          template: require('./views/home.html'), // include small templates into routing configuration
          controller: 'HomeController as vm',
          resolve: {
@@ -20,7 +36,7 @@ function homeRouting($urlRouterProvider, $stateProvider) {
                });
             }
          }
-      })
+      })*/
       .state('home.about', {
          url: '/about',
          template: require('./views/home.about.html'),
