@@ -26,10 +26,10 @@ var config = {
    }
 };
 
-deps.forEach(function (dep) {
+/*deps.forEach(function (dep) {
    let depPath = path.resolve(nodeModulesDir, dep);
    config.resolve.alias[dep.split(path.sep)[0]] = depPath;
    config.module.noParse.push(depPath);
-});
+});*/
 
 module.exports = config;
