@@ -1,4 +1,4 @@
-import template from './home.about.html';
+import template from './home-about.html';
 import controller from './home-about.controller';
 
 let homeAboutComponent = {

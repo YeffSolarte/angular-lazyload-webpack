@@ -19,7 +19,5 @@ class HomeController {
 
 HomeController.$inject = ['$ocLazyLoad', '$injector'];
 
-export default angular
-   .module('home.controller', [])
-   .controller('HomeController', HomeController);
+export default HomeController;
 
