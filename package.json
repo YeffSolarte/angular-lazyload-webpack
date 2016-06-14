@@ -5,6 +5,7 @@
   "scripts": {
     "start": "hs build",
     "build": "webpack -p",
+    "dev": "webpack --progress --watch",
     "devs": "webpack-dev-server --content-base build --hot --inline --devtool eval",
     "test": "karma start test/karma.config.js"
   },
