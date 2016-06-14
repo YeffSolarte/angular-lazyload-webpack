@@ -1,20 +1,9 @@
-let homeComponent = {
-   template: `
-      <h1>I'm fucking home</h1>
+import template from './home.html';
+import controller from './home.controller';
 
-      <button ng-click="$ctrl.callService()">Call Service</button>
-   `,
-   controller: ['$ocLazyLoad', '$injector', function ($ocLazyLoad, $injector) {
-      this.callService = () => {
-         $ocLazyLoad.load({
-            name: 'home.service'
-         }).then(() => {
-            //$injector.get('HomeService');
-            console.log(`$injector.get('HomeService')`);
-            console.log($injector.get('HomeService'));
-         })
-      };
-   }]
+let homeComponent = {
+   template,
+   controller
 };
 
 export default angular

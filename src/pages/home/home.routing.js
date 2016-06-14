@@ -39,7 +39,7 @@ function homeRouting($urlRouterProvider, $stateProvider) {
       })*/
       .state('home.about', {
          url: '/about',
-         template: require('./views/home.about.html'),
+         template: require('./home-about/home.about.html'),
          controller: 'HomeAboutController as vm'
       });
 }
