@@ -8,7 +8,7 @@ function homeRouting($urlRouterProvider, $stateProvider) {
          url: '/home',
          template: '<home></home>',
          resolve: {
-            loadHomeController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
+            loadHomeComponent: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                return $q((resolve) => {
                   require.ensure([], () => {
                      // load whole module
@@ -39,8 +39,19 @@ function homeRouting($urlRouterProvider, $stateProvider) {
       })*/
       .state('home.about', {
          url: '/about',
-         template: require('./home-about/home-about.html'),
-         controller: 'HomeAboutController as vm'
+         template: '<home-about></home-about>',
+         resolve: {
+            loadHomeAboutComponent: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
+               return $q((resolve) => {
+                  require.ensure([], () => {
+                     // load whole module
+                     let module = require('./home-about/home-about').default;
+                     $ocLazyLoad.load({name: 'home-about'});
+                     resolve(module.controller);
+                  });
+               });
+            }]
+         }
       });
 }
 

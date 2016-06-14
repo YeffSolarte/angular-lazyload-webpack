@@ -2,14 +2,14 @@
 
 class HomeController {
    constructor($ocLazyLoad, $injector) {
-      /*this.callService = () => {
+      this.callService = () => {
          $ocLazyLoad.load({
             name: 'home.service'
          }).then(() => {
             console.log(`$injector.get('HomeService')`);
             console.log($injector.get('HomeService'));
          })
-      };*/
+      };
    }
 
    $onInit() {
