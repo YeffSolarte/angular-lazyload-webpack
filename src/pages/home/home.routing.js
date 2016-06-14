@@ -6,7 +6,12 @@ function homeRouting($urlRouterProvider, $stateProvider) {
    $stateProvider
       .state('home', {
          url: '/home',
-         template: '<home></home>',
+        /* controller: ['message', function (message) {
+            this.message = message;
+            
+         }],
+         controllerAs: '$ctrl',*/
+         template: '<home ></home>',
          resolve: {
             loadHomeComponent: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                return $q((resolve) => {
@@ -17,7 +22,19 @@ function homeRouting($urlRouterProvider, $stateProvider) {
                      resolve(module.controller);
                   });
                });
-            }]
+            }]/*,
+            loadHomeService:['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
+               return $q((resolve) => {
+                  require.ensure([], () => {
+                     // load whole module
+                     let module = require('./home.service').default;
+                     console.log('module');
+                     console.log(module);
+                     $ocLazyLoad.load({name: 'home.service'});
+                     resolve(module.service);
+                  });
+               });
+            }]*/
          }
       })
       /*.state('home', {

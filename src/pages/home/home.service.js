@@ -1,10 +1,15 @@
 class HomeService {
+
    constructor() {
 
    }
 
    doSomething() {
       console.log(`doing something`);
+   }
+
+   message() {
+      return `I'm lazy loaded`;
    }
 }
 

@@ -3,7 +3,10 @@ import controller from './home.controller';
 
 let homeComponent = {
    template,
-   controller
+   controller,
+   bindings: {
+      message: '<?'
+   }
 };
 
 export default angular
