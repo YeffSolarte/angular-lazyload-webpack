@@ -2,6 +2,7 @@
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import uiBootstrap from 'angular-ui-bootstrap';
 
 import homeRouting from './pages/home/home.routing';
 //import messagesRouting from './pages/messages/messages.routing';
@@ -11,6 +12,7 @@ import ocLazyLoad from 'oclazyload';
 export default angular
    .module('lazyApp', [
       uiRouter,
+      uiBootstrap,
       // @TODO: It's a hack! https://github.com/ocombe/ocLazyLoad/issues/179
       (() => {
          /*require('oclazyload');

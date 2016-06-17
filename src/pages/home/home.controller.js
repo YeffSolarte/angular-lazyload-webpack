@@ -1,7 +1,7 @@
 'use strict';
 
 class HomeController {
-   constructor($ocLazyLoad, $injector, $q) {
+   constructor($ocLazyLoad, $injector, $q, $uibModal) {
 
       this.callService = () => {
 
@@ -20,11 +20,16 @@ class HomeController {
 
       };
 
-
    }
 
    $onInit() {
 
+   }
+
+   getDragService() {
+      console.log('this.HomeService.getDragService()');
+      console.log(this.HomeService.getDragService());
+      this.HomeService.getDragService();
    }
 
 
