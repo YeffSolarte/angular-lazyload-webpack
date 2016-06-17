@@ -6,12 +6,7 @@ function homeRouting($urlRouterProvider, $stateProvider) {
    $stateProvider
       .state('home', {
          url: '/home',
-        /* controller: ['message', function (message) {
-            this.message = message;
-            
-         }],
-         controllerAs: '$ctrl',*/
-         template: '<home ></home>',
+         template: '<home></home>',
          resolve: {
             loadHomeComponent: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                return $q((resolve) => {
