@@ -3,6 +3,10 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
+import dragular from './commons/dragular/dragular';
+
+console.log('--- dragular ---');
+console.log(dragular);
 
 import homeRouting from './pages/home/home.routing';
 //import messagesRouting from './pages/messages/messages.routing';
@@ -13,6 +17,7 @@ export default angular
    .module('lazyApp', [
       uiRouter,
       uiBootstrap,
+      dragular.name,
       // @TODO: It's a hack! https://github.com/ocombe/ocLazyLoad/issues/179
       (() => {
          /*require('oclazyload');
