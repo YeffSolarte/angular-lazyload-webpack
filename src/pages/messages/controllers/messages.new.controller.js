@@ -1,6 +1,6 @@
 'use strict';
 
-import MsgStoreService from '../../../commons/msg-store/msg-store.service';
+import MsgStoreService from '../../../shared/msg-store/msg-store.service';
 
 class MessagesNewController {
    constructor(msgStore) {
