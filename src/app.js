@@ -5,11 +5,8 @@ import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
 import dragular from './commons/dragular/dragular';
 
-console.log('--- dragular ---');
-console.log(dragular);
-
 import homeRouting from './pages/home/home.routing';
-//import messagesRouting from './pages/messages/messages.routing';
+import messagesRouting from './pages/messages/messages.routing';
 
 import ocLazyLoad from 'oclazyload';
 
@@ -31,8 +28,8 @@ export default angular
       //require('commons/msg-store').name,
       /*require('./pages/home/home.routing').name,
       require('./pages/messages/messages.routing').name*/
-      homeRouting.name/*,
-      messagesRouting.name*/
+      homeRouting.name,
+      messagesRouting.name
    ]).config(['$ocLazyLoadProvider', function ($ocLazyLoadProvider) {
       $ocLazyLoadProvider.config({
          debug: true
